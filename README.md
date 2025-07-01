@@ -2,6 +2,35 @@
 
 A modern, real-time chat application built with React (TypeScript) frontend and Node.js backend, featuring WebSocket communication for instant messaging.
 
+## 🌍 Deployed Application
+
+The chat application is live and accessible at:
+
+**🔗 Application frontend URL**: https://chatty.pratiik.me/
+
+**🔗 Application Server URL**: https://chat.pratiik.me/
+
+**⚡ WebSocket Endpoint**: wss://chat.pratiik.me/ws
+
+You can access the deployed application directly in your browser without any setup. Simply visit the URL above and start chatting!
+
+### For Development Against Production Backend
+
+If you want to run the frontend locally but connect to the production backend:
+
+1. **Frontend Environment Configuration**:
+   Create a `.env` file in the `frontend` directory:
+
+   ```env
+   VITE_WS_URL=wss://chat.pratiik.me/ws
+   ```
+
+2. **Start local development**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
 
 ## 🏗️ Architecture Overview
 
@@ -88,11 +117,17 @@ The backend server will start on `http://localhost:8080`
    ```
 
 3. **Environment Configuration**:
-   Create a `.env` file in the `cfe` directory:
+   Create a `.env` file in the `frontend` directory:
 
    ```env
    VITE_WS_URL=ws://localhost:8080
-   # For production, use your deployed backend URL: wss://your-backend-domain.com
+   # For development against local backend
+
+   # For development against production backend:
+   # VITE_WS_URL=wss://chat.pratiik.me/ws
+
+   # For your own production deployment:
+   # VITE_WS_URL=wss://your-backend-domain.com/ws
    ```
 
 4. **Start the development server**:
@@ -141,12 +176,6 @@ npm run preview
 - **Message Queue**: Proper message ordering and state updates
 - **Error Boundaries**: Graceful error handling and user feedback
 
-
-
-
-
-
-
 ### Environment Variables for Production
 
 **Backend (.env)**:
@@ -160,7 +189,8 @@ NODE_ENV=production
 **Frontend (.env)**:
 
 ```env
-VITE_WS_URL=wss://your-backend-domain.com
+VITE_WS_URL=wss://chat.pratiik.me/ws
+# Or for your own deployment: wss://your-backend-domain.com/ws
 ```
 
 ## 📁 Project Structure
@@ -220,4 +250,3 @@ VITE_WS_URL=wss://your-backend-domain.com
 - `user_count` - Updated user count
 - `system_message` - System notifications
 - `error` - Error messages
-

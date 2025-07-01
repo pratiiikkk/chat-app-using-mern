@@ -33,7 +33,7 @@ function App() {
               asChild
             >
               <a
-                href="https://github.com/pratiiikkk/chat-rooms"
+                href="https://github.com/pratiiikkk/chat-app-using-mern"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1"
